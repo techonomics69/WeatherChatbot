@@ -1,0 +1,38 @@
+{
+  "name": "weather",
+  "utterances": {
+    "en": [
+      "weather",
+      "I want to know about [today's](time) weather.",
+      "What is the weather [today](time)?",
+      "What is the weather in [Hong Kong](location) [today](time)?",
+      "I want to know the weather in [the coming hour](time).",
+      "Will it be raining [tonight](time)?",
+      "What is the weather in [Berlin](location)?",
+      "Is [Monte Carlo](location) sunny [tonight](time)?",
+      "Is [today](time) weather good?",
+      "Will it sunny [all day](time)?"
+    ]
+  },
+  "slots": [
+    {
+      "id": "WIWEYHZDtVyQwUHXNcKeH",
+      "name": "time",
+      "entities": [
+        "timeOfDay"
+      ],
+      "color": 1
+    },
+    {
+      "id": "mX8rHkHRR4SIqXAZpaHR5",
+      "name": "location",
+      "entities": [
+        "location"
+      ],
+      "color": 2
+    }
+  ],
+  "contexts": [
+    "global"
+  ]
+}

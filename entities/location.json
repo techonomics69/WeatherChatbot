@@ -1,0 +1,49 @@
+{
+  "id": "location",
+  "name": "location",
+  "type": "list",
+  "occurrences": [
+    {
+      "name": "Hong Kong",
+      "synonyms": [
+        "HK",
+        "hk",
+        "hong kong",
+        "HongKong",
+        "HKSAR"
+      ]
+    },
+    {
+      "name": "Taipei",
+      "synonyms": [
+        "taipei",
+        "Tai Pei",
+        "tai pei",
+        "tp",
+        "North Taiwan"
+      ]
+    },
+    {
+      "name": "New York",
+      "synonyms": [
+        "NYC",
+        "ny",
+        "new york",
+        "Newyork"
+      ]
+    },
+    {
+      "name": "Monte-Carlo",
+      "synonyms": [
+        "Monte Carlo",
+        "monte carlo",
+        "monte-carlo",
+        "monteCarlo"
+      ]
+    }
+  ],
+  "sensitive": false,
+  "fuzzy": 0.8,
+  "examples": [],
+  "pattern": ""
+}

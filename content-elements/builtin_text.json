@@ -1,0 +1,167 @@
+[
+  {
+    "id": "builtin_text-sxPyxq",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "{{temp.weatherInfo}}"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-23T14:56:55.478Z",
+    "modifiedOn": "2020-06-23T14:56:55.478Z"
+  },
+  {
+    "id": "builtin_text-lpZsBk",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Enter the city you are looking for"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-23T16:06:33.650Z",
+    "modifiedOn": "2020-06-23T16:06:33.650Z"
+  },
+  {
+    "id": "builtin_text-belHak",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Hi, I'm weather catbot. I can provide some information of the weather."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:05:53.126Z",
+    "modifiedOn": "2020-06-24T06:05:53.126Z"
+  },
+  {
+    "id": "builtin_text-0u1cqb",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Current weather situation:"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:06:41.561Z",
+    "modifiedOn": "2020-06-24T06:06:41.561Z"
+  },
+  {
+    "id": "builtin_text-Y-bMk_",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "The weather of tonight is:"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:07:41.680Z",
+    "modifiedOn": "2020-06-24T06:07:41.680Z"
+  },
+  {
+    "id": "builtin_text-mzutVg",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "The weather of coming 7 days are:\n"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:09:01.330Z",
+    "modifiedOn": "2020-06-24T06:09:01.330Z"
+  },
+  {
+    "id": "builtin_text-cH5dbh",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please select the function you want below."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:11:58.673Z",
+    "modifiedOn": "2020-06-24T06:11:58.673Z"
+  },
+  {
+    "id": "builtin_text-p0oZDj",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Still looking for other information?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:16:04.321Z",
+    "modifiedOn": "2020-06-24T06:16:04.321Z"
+  },
+  {
+    "id": "builtin_text-WwyE5_",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Wish you have a good day"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-24T06:17:59.866Z",
+    "modifiedOn": "2020-06-24T06:17:59.866Z"
+  },
+  {
+    "id": "builtin_text-nBm5IS",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Hi. I'm only supporting checking weather for now. Sorry!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T05:13:01.953Z",
+    "modifiedOn": "2020-06-26T05:13:01.953Z"
+  },
+  {
+    "id": "builtin_text-04-jWU",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please ask something about weather"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T05:13:44.088Z",
+    "modifiedOn": "2020-06-26T05:14:14.021Z"
+  },
+  {
+    "id": "builtin_text-I7cXQt",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please tell the function you need\n"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T05:36:41.666Z",
+    "modifiedOn": "2020-06-26T05:54:10.210Z"
+  },
+  {
+    "id": "builtin_text-lu2d5_",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Error: Invalid input of fuction. Please enter again."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T05:48:28.909Z",
+    "modifiedOn": "2020-06-26T05:48:28.909Z"
+  },
+  {
+    "id": "builtin_text-kpnTXB",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please tell the city you are looking for"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T05:56:25.903Z",
+    "modifiedOn": "2020-06-26T05:56:25.903Z"
+  },
+  {
+    "id": "builtin_text-h7CUjJ",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Tell me what yo want to know?\n"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-26T06:32:25.221Z",
+    "modifiedOn": "2020-06-26T06:32:25.221Z"
+  }
+]

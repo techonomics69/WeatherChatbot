@@ -1,0 +1,30 @@
+[
+  {
+    "id": "builtin_single-choice-rE6zzz",
+    "formData": {
+      "choices$en": [
+        {
+          "title": "current",
+          "value": "current"
+        },
+        {
+          "title": "tonight",
+          "value": "tonight"
+        },
+        {
+          "title": "7_day-forcasting",
+          "value": "7_day-forcasting"
+        },
+        {
+          "title": "End",
+          "value": "End"
+        }
+      ],
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-06-23T14:54:05.319Z",
+    "modifiedOn": "2020-06-24T06:15:20.208Z"
+  }
+]

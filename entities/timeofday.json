@@ -1,0 +1,43 @@
+{
+  "id": "timeofday",
+  "name": "timeOfDay",
+  "type": "list",
+  "occurrences": [
+    {
+      "name": "current",
+      "synonyms": [
+        "today",
+        "now",
+        "the coming hour"
+      ]
+    },
+    {
+      "name": "tonight",
+      "synonyms": [
+        "Tonight",
+        "in the evening",
+        "after dinner",
+        "at night"
+      ]
+    },
+    {
+      "name": "7-day_forcasting",
+      "synonyms": [
+        "tomorrow",
+        "next day",
+        "coming week",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    }
+  ],
+  "sensitive": false,
+  "fuzzy": 0.8,
+  "examples": [],
+  "pattern": ""
+}

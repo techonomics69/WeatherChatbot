@@ -1,0 +1,260 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "entry",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nlu_extraction"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-belHak"
+      ],
+      "onReceive": []
+    },
+    {
+      "id": "ee5f7bf382",
+      "name": "Current_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "ReEntry_node"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-0u1cqb",
+        "weatherExract {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq",
+        "say #!builtin_text-p0oZDj"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "34b99d753b",
+      "name": "Tonight_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "ReEntry_node"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Y-bMk_",
+        "weatherExract {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq",
+        "say #!builtin_text-p0oZDj"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "150abb1a98",
+      "name": "7_day_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "ReEntry_node"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mzutVg",
+        "weatherExract {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq",
+        "say #!builtin_text-p0oZDj"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "e7b2716dbb",
+      "name": "nlu_extraction",
+      "next": [
+        {
+          "condition": "event.nlu.intent.name == 'weather'",
+          "node": "Input_parameter"
+        },
+        {
+          "condition": "true",
+          "node": "Sorry_node"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "6a429b8be6",
+      "name": "Exit",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-WwyE5_"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "b3424dd97e",
+      "name": "Sorry_node",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nlu_extraction"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-nBm5IS",
+        "say #!builtin_text-04-jWU"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "e493d8b2a1",
+      "name": "Input_parameter",
+      "next": [
+        {
+          "condition": "true",
+          "node": "check_city"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"siteInfo\",\"value\":\"{{event.nlu.slots.location.value}}\"}",
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"function\",\"value\":\"{{event.nlu.slots.time.value}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "60f764dcd3",
+      "name": "check_city",
+      "next": [
+        {
+          "condition": "session.siteInfo",
+          "node": "check_function"
+        },
+        {
+          "condition": "true",
+          "node": "Input_city"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1f592f7426",
+      "name": "check_function",
+      "next": [
+        {
+          "condition": "session.function",
+          "node": "function_debugger"
+        },
+        {
+          "condition": "true",
+          "node": "Input_function"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "00fcf27e80",
+      "name": "Input_city",
+      "next": [
+        {
+          "condition": "true",
+          "node": "check_function"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-kpnTXB"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"siteInfo\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d573a2defa",
+      "name": "function_debugger",
+      "next": [
+        {
+          "condition": "session.function === 'current'",
+          "node": "Current_weather_info"
+        },
+        {
+          "condition": "session.function === 'tonight'",
+          "node": "Tonight_weather_info"
+        },
+        {
+          "condition": "session.function === '7-day_forcasting'",
+          "node": "7_day_weather_info"
+        },
+        {
+          "condition": "true",
+          "node": "Invalid_function_input"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "82cad65a36",
+      "name": "Invalid_function_input",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Input_function"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-lu2d5_"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "79458294cc",
+      "name": "Input_function",
+      "next": [
+        {
+          "condition": "true",
+          "node": "function_debugger"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-I7cXQt"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"function\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "8fbdb965d2",
+      "name": "ReEntry_node",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nlu_extraction"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-h7CUjJ"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    }
+  ]
+}
