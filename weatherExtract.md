@@ -28,18 +28,18 @@ function dtCon(dt, offset) {    //function to transform dataType "dt" to "Date" 
 Then, we will jump into the main function, which will be the const `weatherInfoExtraction{}` in reference. You have to call the API once to get the latitude and longitude of the input city. Furthermore, we should bond it with the **“try-catch” function** in order to prevent HTTP request error. It may cause the crash of the program.
 
 ```javascript
->//get the Latitude and Longitude value of the city
->var url =
->      'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid={{YOUR OWN API}}'     
->    console.log(cityName)
->    console.log(url)
->    try {
->      const { data } = await axios.get(url)
->      var lat = data.coord.lat
->      var lon = data.coord.lon
->    } catch (err) {
->      console.log("Error: Can't find your city")
->    }
+//get the Latitude and Longitude value of the city
+var url =
+      'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid={{YOUR OWN API}}'     
+    console.log(cityName)
+    console.log(url)
+    try {
+      const { data } = await axios.get(url)
+      var lat = data.coord.lat
+      var lon = data.coord.lon
+    } catch (err) {
+      console.log("Error: Can't find your city")
+    }
 ```
 
 After that, the first **“if” condition** is going to get the current weather information. You have to call the API with `await axios.get()` again with your city’s latitude and longitude. This will give you the whole data of current information.
