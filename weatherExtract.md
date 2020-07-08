@@ -125,4 +125,3 @@ While (k < dayNum) {
 *P.S. If you cannot finish the code by yourself, don’t worry. I will put the reference code down below in the appendix. You may need it before jumping into the next part.*
 
 After that, you may find that the bot is not very intelligent. Therefore, we can now try to work with NLU and let the bot understand what you are talking about.
-
