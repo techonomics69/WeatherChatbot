@@ -108,8 +108,8 @@ For inputting the array type object into temp.weatherInfo, I use while loop agai
 ```javascript
 while (weatherTonightCon.hourly[i].dt <= weatherTonightCon.daily[1].sunrise)
 {
-    //Your code which appends the data in temp.weatherInfo…
-i++;
+  //Your code which appends the data in temp.weatherInfo…
+  i++;
 }
 ```
 
