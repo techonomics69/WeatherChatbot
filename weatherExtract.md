@@ -126,4 +126,3 @@ While (k < dayNum) {
 
 After that, you may find that the bot is not very intelligent. Therefore, we can now try to work with NLU and let the bot understand what you are talking about.
 
-hi
