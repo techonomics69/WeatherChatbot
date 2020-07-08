@@ -55,6 +55,7 @@ if (name == 'current') {    //get the current weather information
 ```
 
 The data received will be like this(example):
+![image](https://github.com/cheukming0607/WeatherChatbot/blob/master/HTTP_request_data.png)
 
 Then, you can use `JSON.parse(JSON.stringtify())` to convert the data into a date object. After that use `dtCon()` to do **“dt” conversion**.
 
