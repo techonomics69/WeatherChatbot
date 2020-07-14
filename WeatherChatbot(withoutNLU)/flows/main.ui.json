@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "df052970ef",
+      "position": {
+        "x": 95,
+        "y": 140
+      }
+    },
+    {
+      "id": "skill-3ea60c",
+      "position": {
+        "x": 90,
+        "y": 375
+      }
+    },
+    {
+      "id": "f6d8cbde1b",
+      "position": {
+        "x": 390,
+        "y": 140
+      }
+    },
+    {
+      "id": "115c629386",
+      "position": {
+        "x": 385,
+        "y": 345
+      }
+    },
+    {
+      "id": "fac88080a5",
+      "position": {
+        "x": 385,
+        "y": 570
+      }
+    },
+    {
+      "id": "161dbc4d53",
+      "position": {
+        "x": 90,
+        "y": 625
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "115c629386",
+      "sourcePort": "out0",
+      "target": "skill-3ea60c",
+      "points": [
+        {
+          "x": 591,
+          "y": 482
+        },
+        {
+          "x": 190,
+          "y": 368
+        }
+      ]
+    },
+    {
+      "source": "df052970ef",
+      "sourcePort": "out0",
+      "target": "skill-3ea60c",
+      "points": [
+        {
+          "x": 301,
+          "y": 284
+        },
+        {
+          "x": 190,
+          "y": 368
+        }
+      ]
+    },
+    {
+      "source": "f6d8cbde1b",
+      "sourcePort": "out0",
+      "target": "skill-3ea60c",
+      "points": [
+        {
+          "x": 596,
+          "y": 277
+        },
+        {
+          "x": 190,
+          "y": 368
+        }
+      ]
+    },
+    {
+      "source": "fac88080a5",
+      "sourcePort": "out0",
+      "target": "skill-3ea60c",
+      "points": [
+        {
+          "x": 591,
+          "y": 722
+        },
+        {
+          "x": 190,
+          "y": 368
+        }
+      ]
+    },
+    {
+      "source": "skill-3ea60c",
+      "sourcePort": "out1",
+      "target": "115c629386",
+      "points": [
+        {
+          "x": 296,
+          "y": 447
+        },
+        {
+          "x": 485,
+          "y": 338
+        }
+      ]
+    },
+    {
+      "source": "skill-3ea60c",
+      "sourcePort": "out3",
+      "target": "161dbc4d53",
+      "points": [
+        {
+          "x": 296,
+          "y": 491
+        },
+        {
+          "x": 190,
+          "y": 618
+        }
+      ]
+    },
+    {
+      "source": "skill-3ea60c",
+      "sourcePort": "out0",
+      "target": "f6d8cbde1b",
+      "points": [
+        {
+          "x": 296,
+          "y": 425
+        },
+        {
+          "x": 490,
+          "y": 133
+        }
+      ]
+    },
+    {
+      "source": "skill-3ea60c",
+      "sourcePort": "out2",
+      "target": "fac88080a5",
+      "points": [
+        {
+          "x": 296,
+          "y": 469
+        },
+        {
+          "x": 485,
+          "y": 563
+        }
+      ]
+    }
+  ]
+}

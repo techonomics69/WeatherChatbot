@@ -1,0 +1,103 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "i3fpi1vphh",
+    "contentId": "builtin_single-choice-GWuSoY",
+    "invalidContentId": "",
+    "keywords": {
+      "current": [
+        "current",
+        "Current"
+      ],
+      "tonight": [
+        "tonight",
+        "Tonight"
+      ],
+      "7-Day_forcasting": [
+        "7-Day_forcasting"
+      ],
+      "end": [
+        "end",
+        "End"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-GWuSoY {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "610255"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"i3fpi1vphh\",\"contentId\":\"builtin_single-choice-GWuSoY\",\"invalidContentId\":\"\",\"keywords\":{\"current\":[\"current\",\"Current\"],\"tonight\":[\"tonight\",\"Tonight\"],\"7-Day_forcasting\":[\"7-Day_forcasting\"],\"end\":[\"end\",\"End\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-i3fpi1vphh'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "712682"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"i3fpi1vphh\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-i3fpi1vphh']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "683866"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "037480"
+    }
+  ]
+}

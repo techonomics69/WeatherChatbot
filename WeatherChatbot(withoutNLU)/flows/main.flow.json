@@ -1,0 +1,124 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "df052970ef",
+      "name": "entry",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Function_selector"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-BRhldC",
+        "say #!builtin_text-KhR7IG"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"siteInfo\",\"value\":\"{{event.payload.text}}\"}"
+      ]
+    },
+    {
+      "id": "skill-3ea60c",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Function_selector",
+      "flow": "skills/choice-3ea60c.flow.json",
+      "next": [
+        {
+          "caption": "User picked [current]",
+          "condition": "temp['skill-choice-ret-i3fpi1vphh'] == \"current\"",
+          "node": "Current_weather_info"
+        },
+        {
+          "caption": "User picked [tonight]",
+          "condition": "temp['skill-choice-ret-i3fpi1vphh'] == \"tonight\"",
+          "node": "Tonight_weather_info"
+        },
+        {
+          "caption": "User picked [7-Day_f...]",
+          "condition": "temp['skill-choice-ret-i3fpi1vphh'] == \"7-Day_forcasting\"",
+          "node": "7_day_weather_info"
+        },
+        {
+          "caption": "User picked [end]",
+          "condition": "temp['skill-choice-ret-i3fpi1vphh'] == \"end\"",
+          "node": "Exit"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "f6d8cbde1b",
+      "name": "Current_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Function_selector"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-3FiaKF",
+        "weatherExract {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-DMpZro",
+        "say #!builtin_text-Zwg-Ve"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "115c629386",
+      "name": "Tonight_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Function_selector"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-0Zr7wZ",
+        "weatherExract {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-DMpZro",
+        "say #!builtin_text-Zwg-Ve"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "fac88080a5",
+      "name": "7_day_weather_info",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Function_selector"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Qyb_RJ",
+        "weatherExract {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-DMpZro",
+        "say #!builtin_text-Zwg-Ve"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "161dbc4d53",
+      "name": "Exit",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-SgNKNv"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}
