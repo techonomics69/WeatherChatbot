@@ -23,17 +23,11 @@
     {
       "id": "ee5f7bf382",
       "name": "Current_weather_info",
-      "next": [
-        {
-          "condition": "true",
-          "node": "ReEntry_node"
-        }
-      ],
+      "next": [],
       "onEnter": [
         "say #!builtin_text-0u1cqb",
-        "weatherExract {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
-        "say #!builtin_text-sxPyxq",
-        "say #!builtin_text-p0oZDj"
+        "weatherExtract_1 {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq"
       ],
       "onReceive": null,
       "type": "standard"
@@ -41,17 +35,11 @@
     {
       "id": "34b99d753b",
       "name": "Tonight_weather_info",
-      "next": [
-        {
-          "condition": "true",
-          "node": "ReEntry_node"
-        }
-      ],
+      "next": [],
       "onEnter": [
         "say #!builtin_text-Y-bMk_",
-        "weatherExract {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
-        "say #!builtin_text-sxPyxq",
-        "say #!builtin_text-p0oZDj"
+        "weatherExtract_1 {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq"
       ],
       "onReceive": null,
       "type": "standard"
@@ -59,17 +47,11 @@
     {
       "id": "150abb1a98",
       "name": "7_day_weather_info",
-      "next": [
-        {
-          "condition": "true",
-          "node": "ReEntry_node"
-        }
-      ],
+      "next": [],
       "onEnter": [
         "say #!builtin_text-mzutVg",
-        "weatherExract {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
-        "say #!builtin_text-sxPyxq",
-        "say #!builtin_text-p0oZDj"
+        "weatherExtract_1 {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "say #!builtin_text-sxPyxq"
       ],
       "onReceive": null,
       "type": "standard"
@@ -88,16 +70,6 @@
         }
       ],
       "onEnter": [],
-      "onReceive": null,
-      "type": "standard"
-    },
-    {
-      "id": "6a429b8be6",
-      "name": "Exit",
-      "next": [],
-      "onEnter": [
-        "say #!builtin_text-WwyE5_"
-      ],
       "onReceive": null,
       "type": "standard"
     },
@@ -156,7 +128,7 @@
       "next": [
         {
           "condition": "session.function",
-          "node": "function_debugger"
+          "node": "function_selector"
         },
         {
           "condition": "true",
@@ -186,7 +158,7 @@
     },
     {
       "id": "d573a2defa",
-      "name": "function_debugger",
+      "name": "function_selector",
       "next": [
         {
           "condition": "session.function === 'current'",
@@ -230,7 +202,7 @@
       "next": [
         {
           "condition": "true",
-          "node": "function_debugger"
+          "node": "function_selector"
         }
       ],
       "onEnter": [

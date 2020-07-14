@@ -10,26 +10,26 @@
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-  function dtCon(dt, offset) {    //function to transform dataType "dt" to "Date"
-    console.log("dt: ", dt)
-    console.log("timezone_offset: ", offset)
+  function dtCon(dt, offset) {
+    //function to transform dataType "dt" to "Date"
+    console.log('dt: ', dt)
+    console.log('timezone_offset: ', offset)
 
     if (dt == undefined) {
       console.log('Error: var dt is undefined')
       return 0
     } else {
       var tempDate = new Date()
-      var utc = (dt * 1000) + (tempDate.getTimezoneOffset() * 60000)
-      var localTime = utc + (offset * 1000)
+      var utc = dt * 1000 + tempDate.getTimezoneOffset() * 60000
+      var localTime = utc + offset * 1000
       var date = new Date(localTime)
       return date
     }
   }
 
   const weatherInfoExtraction = async (name, cityName) => {
-
-    var url =   
-      'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=12a728e8826a1d066d77af024be3cc40'     //get the Latitude and Lontitude value of the city
+    var url =
+      'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=12a728e8826a1d066d77af024be3cc40' //get the Latitude and Lontitude value of the city
     console.log(cityName)
     console.log(url)
     try {
@@ -40,7 +40,8 @@
       console.log("Error: Can't find your city")
     }
 
-    if (name == 'current') {    //get the current weather information
+    if (name == 'current') {
+      //get the current weather information
       console.log('current')
       const { data } = await axios.get(
         'https://api.openweathermap.org/data/2.5/onecall?lat=' +
@@ -49,10 +50,10 @@
           lon +
           '&exclude=hourly,minutely,daily&units=metric&appid=12a728e8826a1d066d77af024be3cc40'
       )
-      var weatherCurrentCon = JSON.parse(JSON.stringify(data))    //change the JSON data to Javascript object
-      var dateInfo = dtCon(weatherCurrentCon.current.dt, weatherCurrentCon.timezone_offset)          //change dt to Date
+      var weatherCurrentCon = JSON.parse(JSON.stringify(data)) //change the JSON data to Javascript object
+      var dateInfo = dtCon(weatherCurrentCon.current.dt, weatherCurrentCon.timezone_offset) //change dt to Date
 
-      temp.weatherInfo =                                          //append the weatherInfo to "temp" in botpress
+      temp.weatherInfo = //append the weatherInfo to "temp" in botpress
         dateInfo.getDate() +
         ' ' +
         months[dateInfo.getMonth()] +
@@ -66,26 +67,33 @@
         '℃\n' +
         'and the weather condition is ' +
         weatherCurrentCon.current.weather[0].description
-
-    } else if (name == 'tonight') {                             //get the tonight weather information
+    } else if (name == 'tonight') {
+      //get the tonight weather information
       console.log('tonight')
       const { data } = await axios.get(
-        'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely&units=metric&appid=12a728e8826a1d066d77af024be3cc40'
+        'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+          lat +
+          '&lon=' +
+          lon +
+          '&exclude=minutely&units=metric&appid=12a728e8826a1d066d77af024be3cc40'
       )
-      
+
       var weatherTonightCon = JSON.parse(JSON.stringify(data))
       var curInfo = weatherTonightCon.current
       temp.weatherInfo = ''
 
-      if (curInfo.dt < curInfo.sunset) {                        //if your current time is in the afternoon
-        console.log("In the afternoon")
+      if (curInfo.dt < curInfo.sunset) {
+        //if your current time is in the afternoon
+        console.log('In the afternoon')
         var i = 0
 
-        while (weatherTonightCon.hourly[i].dt <= curInfo.sunset) {    //move the index of "hourly" to sunset hour
+        while (weatherTonightCon.hourly[i].dt <= curInfo.sunset) {
+          //move the index of "hourly" to sunset hour
           i++
         }
 
-        while (weatherTonightCon.hourly[i].dt <= weatherTonightCon.daily[1].sunrise) {    //append the array type weatherInfo to "temp" in botpress
+        while (weatherTonightCon.hourly[i].dt <= weatherTonightCon.daily[1].sunrise) {
+          //append the array type weatherInfo to "temp" in botpress
           dateInfo = dtCon(weatherTonightCon.hourly[i].dt, weatherTonightCon.timezone_offset)
 
           temp.weatherInfo +=
@@ -108,8 +116,9 @@
 
           i++
         }
-      } else if (curInfo.dt >= curInfo.sunset) {                //if your current time is in the evening
-        console.log("In the evening")
+      } else if (curInfo.dt >= curInfo.sunset) {
+        //if your current time is in the evening
+        console.log('In the evening')
         var i = 0
         while (weatherTonightCon.hourly[i].dt <= weatherTonightCon.daily[1].sunrise) {
           dateInfo = dtCon(weatherTonightCon.hourly[i].dt, weatherTonightCon.timezone_offset)
@@ -135,11 +144,16 @@
           i++
         }
       }
-    } else if (name == '7-day_forcasting') {              //get the 7-day_forcasting's weather information
+    } else if (name == '7-day_forcasting') {
+      //get the 7-day_forcasting's weather information
 
       console.log('7-day_forcasting')
       const { data } = await axios.get(
-        'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely&units=metric&appid=12a728e8826a1d066d77af024be3cc40'
+        'https://api.openweathermap.org/data/2.5/onecall?lat=' +
+          lat +
+          '&lon=' +
+          lon +
+          '&exclude=minutely&units=metric&appid=12a728e8826a1d066d77af024be3cc40'
       )
       console.log(data)
       temp.weatherInfo = ''

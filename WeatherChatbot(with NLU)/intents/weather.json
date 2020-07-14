@@ -11,7 +11,10 @@
       "What is the weather in [Berlin](location)?",
       "Is [Monte Carlo](location) sunny [tonight](time)?",
       "Is [today](time) weather good?",
-      "Will it sunny [all day](time)?"
+      "Will it be sunny [all day](time)?",
+      "What's [Berlin's](location) weather [now](time)?",
+      "What's the weather [now](time)?",
+      "What's the [current](time) weather?"
     ]
   },
   "slots": [

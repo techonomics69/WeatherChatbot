@@ -40,7 +40,7 @@
         {
           "caption": "User picked [7-Day_f...]",
           "condition": "temp['skill-choice-ret-i3fpi1vphh'] == \"7-Day_forcasting\"",
-          "node": "7_day_weather_info"
+          "node": "7_days_weather_info"
         },
         {
           "caption": "User picked [end]",
@@ -67,7 +67,7 @@
       ],
       "onEnter": [
         "say #!builtin_text-3FiaKF",
-        "weatherExract {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "weatherExtract_1 {\"name\":\"current\",\"cityName\":\"{{session.siteInfo}}\"}",
         "say #!builtin_text-DMpZro",
         "say #!builtin_text-Zwg-Ve"
       ],
@@ -85,7 +85,7 @@
       ],
       "onEnter": [
         "say #!builtin_text-0Zr7wZ",
-        "weatherExract {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "weatherExtract_1 {\"name\":\"tonight\",\"cityName\":\"{{session.siteInfo}}\"}",
         "say #!builtin_text-DMpZro",
         "say #!builtin_text-Zwg-Ve"
       ],
@@ -94,7 +94,7 @@
     },
     {
       "id": "fac88080a5",
-      "name": "7_day_weather_info",
+      "name": "7_days_weather_info",
       "next": [
         {
           "condition": "true",
@@ -103,7 +103,7 @@
       ],
       "onEnter": [
         "say #!builtin_text-Qyb_RJ",
-        "weatherExract {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
+        "weatherExtract_1 {\"name\":\"7-day_forcasting\",\"cityName\":\"{{session.siteInfo}}\"}",
         "say #!builtin_text-DMpZro",
         "say #!builtin_text-Zwg-Ve"
       ],
